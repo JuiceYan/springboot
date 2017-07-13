@@ -24,6 +24,7 @@ public class DbData {
         this.getMusicians(musicianAmount);
         album.setMusicians();
 >>>>>>> bfc4a774f3fcd967368b466dd5ee5dbd68b08d73
+                
         return null;
     }
 
