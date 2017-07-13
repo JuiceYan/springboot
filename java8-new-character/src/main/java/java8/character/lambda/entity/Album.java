@@ -1,6 +1,10 @@
 package java8.character.lambda.entity;
 
 import java.util.List;
+<<<<<<< HEAD
+=======
+import java.util.Set;
+>>>>>>> bfc4a774f3fcd967368b466dd5ee5dbd68b08d73
 
 /**
  * Created by admin on 2017/7/9.
@@ -18,6 +22,7 @@ public class Album{
         this.name = name;
     }
 
+<<<<<<< HEAD
     public List<Track> getTracks() {
         return tracks;
     }
@@ -31,6 +36,21 @@ public class Album{
     }
 
     public void setMusicians(List<Artist> musicians) {
+=======
+    public Set<Track> getTracks() {
+        return tracks;
+    }
+
+    public void setTracks(Set<Track> tracks) {
+        this.tracks = tracks;
+    }
+
+    public Set<Artist> getMusicians() {
+        return musicians;
+    }
+
+    public void setMusicians(Set<Artist> musicians) {
+>>>>>>> bfc4a774f3fcd967368b466dd5ee5dbd68b08d73
         this.musicians = musicians;
     }
 }
