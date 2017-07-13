@@ -1,7 +1,6 @@
 package java8.character.lambda.entity;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by admin on 2017/7/9.
@@ -19,19 +18,19 @@ public class Album{
         this.name = name;
     }
 
-    public Set<Track> getTracks() {
+    public List<Track> getTracks() {
         return tracks;
     }
 
-    public void setTracks(Set<Track> tracks) {
+    public void setTracks(List<Track> tracks) {
         this.tracks = tracks;
     }
 
-    public Set<Artist> getMusicians() {
+    public List<Artist> getMusicians() {
         return musicians;
     }
 
-    public void setMusicians(Set<Artist> musicians) {
+    public void setMusicians(List<Artist> musicians) {
         this.musicians = musicians;
     }
 }

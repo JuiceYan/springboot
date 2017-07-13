@@ -17,8 +17,8 @@ public class DbData {
         }
         Album album = new Album();
         album.setName("模特");
-        this.getMusicians(musicianAmount);
-        album.setMusicians();
+//        this.getMusicians(musicianAmount);
+//        album.setMusicians();
         return null;
     }
 
