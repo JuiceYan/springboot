@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import java.util.*;
 import java.util.function.Predicate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -103,5 +105,22 @@ public class PersonTest {
                 System.out.println(p.getName()+" "+p.getAge());
             }
         }
+    }
+
+    /**
+     * yyyy-MM-dd'T'HH:mm:ssXXX
+     * YYYY-MM-DD HH:SS:MM
+     */
+    @Test
+    public  void testRegex(){
+//        String testStr = "2016-11-09T22:21:43+08:00";
+        String testStr = "2016-11-09T22:21:43+08:00";
+//        String regex = "([\\s\\S]*)(\\d{4})-([0-1]\\d)-([0-3]\\d)['T']([0-2]\\d):([0-5]\\d):([0-5]\\d)[+](\\d{2}):(\\d{2})([\\s\\S]*)";
+        String regex = "(\\d{4})-([0-1]\\d)-([0-3]\\d)['T']([0-2]\\d):([0-5]\\d):([0-5]\\d)[+](\\d{2}):(\\d{2})";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(testStr);
+        boolean flag = matcher.matches();
+        System.out.println(flag);
+
     }
 }
