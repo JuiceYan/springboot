@@ -3,9 +3,10 @@ package java8.character.lambda;
 import java8.character.lambda.entity.Person;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Created by admin on 2017/7/8.
@@ -29,6 +30,54 @@ public class PersonTest {
         long count2 =persons.stream().filter(filter1.and(filter2)).peek(person -> System.out.println(person.getName()+" "+person.getAge())).count();
         System.out.println(count+" "+count2);
         printPersonsWithinAgeRange(persons,9,12);
+    }
+    @Test
+    public void test3(){
+        List<Person> persons = initPersons(10);
+//        persons.stream().filter(p-> p.getName().contains("Bob")).map(person -> person.getName()).collect(Collectors.toList()).forEach(System.out::println);
+//        persons.stream().flatMap()
+
+
+    }
+    public static void main(String[] args) {
+        Map<String, String> hashMap = new HashMap<String, String>();
+        hashMap.put("70317", "曲阳");
+        hashMap.put("71121", "在东");
+        hashMap.put("70333", "商音");
+        hashMap.put("80000", "有恒");
+        for(Map.Entry<String, String> entry: hashMap.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println("key:" + key + ";value:" + value);
+        }
+    }
+    @Test
+    public void test4(){
+        Stream.of(Arrays.asList(1,2,3),Arrays.asList(4,5,6),Arrays.asList(7,8,9)).flatMap(num->num.stream()).collect(Collectors.toList()).forEach(System.out::println);
+        Stream.of(Arrays.asList(1,2,3),Arrays.asList(4,5,6),Arrays.asList(7,8,9)).map(num->num.stream()).collect(Collectors.toList()).forEach(System.out::println);
+        Optional<Integer> min = Stream.of(Arrays.asList(1, 2, 3), Arrays.asList(4, 5, 6), Arrays.asList(7, 8, 9)).flatMap(num -> num.stream()).min((a, b) -> a.intValue() + b.intValue());
+        System.out.println("min:"+min);
+        Optional<Integer> min1 = Stream.of(Arrays.asList(1, 2, 3), Arrays.asList(4, 5, 6), Arrays.asList(7, 8, 9)).flatMap(num -> num.stream()).min(Comparator.comparing(a->a.intValue()));
+        System.out.println("min1:"+min1);
+        Optional<Integer> max = Stream.of(Arrays.asList(1, 2, 3), Arrays.asList(4, 5, 6), Arrays.asList(7, 8, 9)).flatMap(num -> num.stream()).max((a, b) -> a.intValue() - b.intValue());
+        System.out.println("max:"+max);
+        System.out.println("min:"+min);
+        Optional<Integer> max2 = Stream.of(Arrays.asList(1, 2, 3), Arrays.asList(4, 5, 6), Arrays.asList(7, 8, 9)).flatMap(num -> num.stream()).max(Comparator.comparing(a->a.intValue()));
+        System.out.println("max2:"+max2);
+    }
+
+    @Test
+    public void test5(){
+        String a = "qq";
+        String b = "qq";
+        String cc = new String("qq");
+        Long ss = 12313123L;
+        Object object = new Object();
+        System.out.println(String.valueOf(ss));
+         System.out.println(a==cc);
+        System.out.println(a==b);
+        Integer va = Stream.of(1,2,3,4,5,6,7).reduce(0,(d,f)->d.intValue()+f.intValue());
+        System.out.println("va:"+va);
     }
     private List<Person> initPersons(int amount) {
         List<Person> persons = new ArrayList<>();
