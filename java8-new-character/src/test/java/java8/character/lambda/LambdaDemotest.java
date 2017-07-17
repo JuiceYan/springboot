@@ -3,10 +3,7 @@ package java8.character.lambda;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -135,6 +132,6 @@ public class LambdaDemotest {
 
         Integer sum = Stream.of(1,2,3).reduce((s,e)->s+e).get();
         System.out.println("sum:"+sum);
-    }
+        Optional.ofNullable(sum).ifPresent(System.out::println);    }
 
 }
