@@ -20,7 +20,8 @@ public class LambdaDemotest {
        new LambdaDemo().excuteresult((String param) -> {
            System.out.println(param);
        });
-
+       new LambdaDemo().excuteresult(System.out::println);
+       new LambdaDemo().excuteresult(System.out::println);
 //       new Thread(()-> {
 //           int i =0;
 //           i++;
@@ -40,16 +41,16 @@ public class LambdaDemotest {
     public void test2(){
         //old way for looper
         List<String> features = Arrays.asList(new String[]{"a","b","c","d","e","f"});
-        for (String str:features) {
-            System.out.println("str:"+str);
-        }
+//        for (String str:features) {
+//            System.out.println("str:"+str);
+//        }
 
         //lambda for looper
-        features.forEach((str)->{
-            System.out.println("n:"+str);
-        });
-        features.forEach(System.out::println);
-        features.stream().map(name->name.toLowerCase()).collect(Collectors.toList());
+//        features.forEach((str)->{
+//            System.out.println("n:"+str);
+//        });
+//        features.forEach(System.out::println);
+        features.stream().map(name->name.toLowerCase()).peek(System.out::println).collect(Collectors.toList());
     }
 
 
@@ -120,7 +121,6 @@ public class LambdaDemotest {
     }
     @Test
     public void test5(){
-
         List<Integer> integerList1 = new ArrayList<Integer>();
         List<Integer> list1 = Arrays.asList(1,2,3,4);
         List<Integer> list2 = Arrays.asList(5,6,7,8);
@@ -134,4 +134,13 @@ public class LambdaDemotest {
         System.out.println("sum:"+sum);
         Optional.ofNullable(sum).ifPresent(System.out::println);    }
 
+    @Test
+    public void test6(){
+        Predicate<Integer> predicateInteger = a->a>5;
+        System.out.println(predicateInteger.test(2));
+        System.out.println(predicateInteger.and( t->t>5));
+        System.out.println(predicateInteger.negate());
+        System.out.println(predicateInteger.or(predicateInteger));
+        System.out.println(predicateInteger.toString());
+    }
 }

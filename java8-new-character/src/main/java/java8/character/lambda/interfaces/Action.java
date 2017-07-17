@@ -6,4 +6,6 @@ package java8.character.lambda.interfaces;
 @FunctionalInterface
 public interface Action {
     void run111(String param);
+    default void run111(int param){};
+    default void run111(String param,int a){};
 }
