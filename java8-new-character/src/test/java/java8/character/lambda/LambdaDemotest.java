@@ -1,5 +1,4 @@
 package java8.character.lambda;
-
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
@@ -132,7 +131,8 @@ public class LambdaDemotest {
 
         Integer sum = Stream.of(1,2,3).reduce((s,e)->s+e).get();
         System.out.println("sum:"+sum);
-        Optional.ofNullable(sum).ifPresent(System.out::println);    }
+        Optional.ofNullable(sum).ifPresent(System.out::println);
+    }
 
     @Test
     public void test6(){
@@ -142,5 +142,13 @@ public class LambdaDemotest {
         System.out.println(predicateInteger.negate());
         System.out.println(predicateInteger.or(predicateInteger));
         System.out.println(predicateInteger.toString());
+
+    }
+
+    @Test
+    public void test7(){
+        
+
+
     }
 }

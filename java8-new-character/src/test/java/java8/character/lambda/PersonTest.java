@@ -7,6 +7,7 @@ import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 /**
  * Created by admin on 2017/7/8.
@@ -36,7 +37,6 @@ public class PersonTest {
         List<Person> persons = initPersons(10);
 //        persons.stream().filter(p-> p.getName().contains("Bob")).map(person -> person.getName()).collect(Collectors.toList()).forEach(System.out::println);
 //        persons.stream().flatMap()
-
 
     }
     public static void main(String[] args) {
