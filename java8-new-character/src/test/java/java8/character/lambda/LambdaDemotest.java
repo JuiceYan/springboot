@@ -1,5 +1,7 @@
 package java8.character.lambda;
 
+import java8.character.lambda.dao.DbData;
+import java8.character.lambda.entity.Album;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
@@ -145,5 +147,13 @@ public class LambdaDemotest {
         System.out.println(predicateInteger.negate());
         System.out.println(predicateInteger.or(predicateInteger));
         System.out.println(predicateInteger.toString());
+    }
+
+
+    @Test
+    public void test7(){
+        List<Album> albumList = new DbData().getAlbums(3,5,4);
+        albumList.stream().flatMap(album -> album.getMusicians().stream()).map(artist -> artist.getName().contains("aa"));
+        albumList.stream().flatMap(album -> album.getMusicians().stream()).peek(artist -> artist.getName());
     }
 }
