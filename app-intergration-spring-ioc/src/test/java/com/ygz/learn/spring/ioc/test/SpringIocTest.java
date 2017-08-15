@@ -44,4 +44,13 @@ public class SpringIocTest {
        User user = (User) beanFactory.getBean("001");
         System.out.println(user);
     }
+    @Test
+    public void testSpringIoc4(){
+        String beanXml = "UserTag.xml";
+        Resource classPathResource = new ClassPathResource(beanXml);
+        XmlBeanFactory xmlBeanFactory = new XmlBeanFactory(classPathResource);
+        User user = (User) xmlBeanFactory.getBean("001");
+        System.out.println(user);
+
+    }
 }
