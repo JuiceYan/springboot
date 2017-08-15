@@ -3,6 +3,7 @@ package com.learn.ygz.aspect;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -15,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 @Aspect
 @Component
 public class HttpAspect {
-    private final static Logger logger = org.slf4j.LoggerFactory.getLogger(HttpAspect.class);
+    private final static Logger logger = LoggerFactory.getLogger(HttpAspect.class);
 //    @Pointcut("execution(public * com.learn.ygz.controller.GirlController.insertValidatedGirl(..))")
 @Pointcut("execution(public * com.learn.ygz.controller.GirlController.*(..))")
 public void log(){

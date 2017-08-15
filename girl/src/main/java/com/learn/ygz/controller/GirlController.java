@@ -4,6 +4,7 @@ import com.learn.ygz.entity.Girl;
 import com.learn.ygz.exception.ResponseHandler;
 import com.learn.ygz.services.GirlService;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("getGirls/")
 public class GirlController {
-    private final static Logger logger = org.slf4j.LoggerFactory.getLogger(GirlController.class);
+    private final static Logger logger = LoggerFactory.getLogger(GirlController.class);
     @Autowired
    private GirlService girlService;
 

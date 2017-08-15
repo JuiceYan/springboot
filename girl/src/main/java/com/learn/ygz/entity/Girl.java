@@ -15,6 +15,7 @@ public class Girl implements Serializable{
     private String name;
 
     public Girl() {
+
     }
 
     public String getCoupSize() {
