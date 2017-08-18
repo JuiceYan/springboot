@@ -4,6 +4,7 @@ import com.ygz.learn.spring.ioc.customer.function.User;
 import com.ygz.learn.spring.ioc.service.UserService;
 import org.junit.Test;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.xml.DefaultNamespaceHandlerResolver;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -51,6 +52,6 @@ public class SpringIocTest {
         XmlBeanFactory xmlBeanFactory = new XmlBeanFactory(classPathResource);
         User user = (User) xmlBeanFactory.getBean("001");
         System.out.println(user);
-
+//        DefaultNamespaceHandlerResolver
     }
 }
